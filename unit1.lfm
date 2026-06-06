@@ -1,0 +1,185 @@
+object fMain: TfMain
+  Left = 218
+  Height = 480
+  Top = 113
+  Width = 900
+  Caption = 'Книги в библиотеке'
+  ClientHeight = 480
+  ClientWidth = 900
+  Menu = MainMenu1
+  OnCloseQuery = FormCloseQuery
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '3.6.0.0'
+  object PanelInput: TPanel
+    Left = 0
+    Height = 184
+    Top = 0
+    Width = 900
+    Align = alTop
+    ClientHeight = 184
+    ClientWidth = 900
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Height = 15
+      Top = 0
+      Width = 118
+      Caption = 'Инвентарный номер:'
+    end
+    object Label2: TLabel
+      Left = 98
+      Height = 15
+      Top = 32
+      Width = 36
+      Caption = 'Автор:'
+    end
+    object Label3: TLabel
+      Left = 79
+      Height = 15
+      Top = 64
+      Width = 55
+      Caption = 'Название:'
+    end
+    object Label4: TLabel
+      Left = 65
+      Height = 15
+      Top = 96
+      Width = 69
+      Caption = 'Год издания:'
+    end
+    object Label5: TLabel
+      Left = 18
+      Height = 15
+      Top = 128
+      Width = 116
+      Caption = 'Количество страниц:'
+    end
+    object Label6: TLabel
+      Left = 35
+      Height = 15
+      Top = 160
+      Width = 99
+      Caption = 'Наличие в фонде:'
+    end
+    object eInvNumber: TEdit
+      Left = 144
+      Height = 23
+      Top = 0
+      Width = 280
+      TabOrder = 0
+    end
+    object eAuthor: TEdit
+      Left = 144
+      Height = 23
+      Top = 32
+      Width = 280
+      TabOrder = 1
+    end
+    object eTitle: TEdit
+      Left = 144
+      Height = 23
+      Top = 64
+      Width = 280
+      TabOrder = 2
+    end
+    object eYear: TEdit
+      Left = 144
+      Height = 23
+      Top = 96
+      Width = 280
+      TabOrder = 3
+    end
+    object ePages: TEdit
+      Left = 144
+      Height = 23
+      Top = 128
+      Width = 280
+      TabOrder = 4
+    end
+    object cbInStock: TCheckBox
+      Left = 144
+      Height = 17
+      Top = 160
+      Width = 18
+      TabOrder = 5
+    end
+  end
+  object SG: TStringGrid
+    Left = 0
+    Height = 296
+    Top = 184
+    Width = 900
+    Align = alClient
+    ColCount = 6
+    FixedCols = 0
+    RowCount = 1
+    TabOrder = 1
+    OnClick = SGClick
+  end
+  object MainMenu1: TMainMenu
+    Left = 840
+    Top = 440
+    object miFile: TMenuItem
+      Caption = 'Файл'
+      object miNewFile: TMenuItem
+        Caption = 'Созать/Новый файл'
+        OnClick = miNewFileClick
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Открыть файл'
+        OnClick = miOpenFileClick
+      end
+      object miSave: TMenuItem
+        Caption = 'Сохранить'
+        OnClick = miSaveClick
+      end
+      object miSaveAs: TMenuItem
+        Caption = 'Сохранить как'
+        OnClick = miSaveAsClick
+      end
+      object miCloseFile: TMenuItem
+        Caption = 'Закрыть файл'
+        OnClick = miCloseFileClick
+      end
+      object miExit: TMenuItem
+        Caption = 'Выход из программы'
+        OnClick = miExitClick
+      end
+    end
+    object miRecord: TMenuItem
+      Caption = 'Запись'
+      object miAddRecord: TMenuItem
+        Caption = 'Добавить запись'
+        OnClick = miAddRecordClick
+      end
+      object miEditRecord: TMenuItem
+        Caption = 'Редактировать запись'
+        OnClick = miEditRecordClick
+      end
+      object MenuItem11: TMenuItem
+        Caption = 'Удалить запись'
+        OnClick = miDeleteRecordClick
+      end
+      object miSort: TMenuItem
+        Caption = 'Сортировка'
+        object miSortAsc: TMenuItem
+          Caption = 'По возрастанию'
+          OnClick = miSortAscClick
+        end
+        object miSortDesc: TMenuItem
+          Caption = 'По убыванию'
+          OnClick = miSortDescClick
+        end
+      end
+      object miSearchRecord: TMenuItem
+        Caption = 'Поиск записи'
+        OnClick = miSearchRecordClick
+      end
+      object miClearForm: TMenuItem
+        Caption = 'Очистить форму / Новый ввод'
+        OnClick = miClearRecordClick
+      end
+    end
+  end
+end
